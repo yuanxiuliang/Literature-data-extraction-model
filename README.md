@@ -362,19 +362,21 @@ cvt_method_details (1) ←→ (1) cvt_crystal_morphology
 
 ### 🚧 进行中阶段
 
-#### Phase 3: PDF解析与文本提取 (待开始)
-- PDF文件解析和文本提取
-- 文献信息自动识别
-- 文本预处理和清洗
+#### Phase 3: 文献搜索与PDF获取 (待开始)
+- 学术文献搜索引擎集成
+- 关键词搜索和结果筛选
+- PDF批量下载和预处理
 
 ### 📋 待完成阶段
 
-- Phase 4: AI模型集成与训练
-- Phase 5: 信息提取核心模块
-- Phase 6: Web用户界面开发
-- Phase 7: 桌面应用开发
-- Phase 8: 测试与优化
-- Phase 9: 部署与文档
+- Phase 4: PDF解析与文本提取
+- Phase 5: 文献筛选与分类
+- Phase 6: 信息提取与数据存储
+- Phase 7: AI模型集成与训练
+- Phase 8: Web用户界面开发
+- Phase 9: 桌面应用开发
+- Phase 10: 测试与优化
+- Phase 11: 部署与文档
 
 ---
 
