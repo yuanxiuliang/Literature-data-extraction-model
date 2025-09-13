@@ -290,17 +290,32 @@ cvt_method_details (1) ←→ (1) cvt_crystal_morphology
 
 2. **启动数据库**
    ```bash
-   # 启动MySQL容器
-   docker-compose up -d
+   # 启动本地MySQL服务 (macOS)
+   brew services start mysql
+   
+   # 创建数据库和用户
+   mysql -u root -e "CREATE DATABASE IF NOT EXISTS crystal_growth CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+   mysql -u root -e "CREATE USER IF NOT EXISTS 'app_user'@'localhost' IDENTIFIED BY 'app_password';"
+   mysql -u root -e "GRANT ALL PRIVILEGES ON crystal_growth.* TO 'app_user'@'localhost';"
+   mysql -u root -e "FLUSH PRIVILEGES;"
+   
+   # 创建数据库表
+   PYTHONPATH=. python app/database/init_db.py
    
    # 运行数据库迁移
-   alembic upgrade head
+   PYTHONPATH=. alembic upgrade head
    ```
 
-3. **启动应用**
+3. **测试数据库**
+   ```bash
+   # 运行数据库测试
+   python test_db.py
+   ```
+
+4. **启动应用**
    ```bash
    # 启动API服务
-   python app/main.py
+   PYTHONPATH=. python app/main.py
    
    # 访问API文档
    # http://localhost:8000/docs
@@ -322,10 +337,44 @@ cvt_method_details (1) ←→ (1) cvt_crystal_morphology
 
 ### 功能特点
 
-- **本地化开发**：使用Docker + MySQL本地开发环境
+- **本地化开发**：使用MySQL本地开发环境
 - **云端部署**：支持部署到云服务供他人使用
 - **数据一致性**：开发和生产环境使用相同的数据库技术
 - **易于扩展**：模块化设计，便于添加新功能
+
+## 项目进度
+
+### ✅ 已完成阶段
+
+#### Phase 1: 项目基础环境搭建 ✅
+- Python 3.9+ 虚拟环境配置
+- 项目目录结构创建
+- Git版本控制和GitHub仓库配置
+- 基础依赖包安装
+
+#### Phase 2: 数据库设计与实现 ✅
+- MySQL 8.0 本地数据库配置
+- 13个核心数据表模型创建
+- SQLAlchemy ORM映射实现
+- Alembic数据库迁移配置
+- 完整服务层和CRUD操作
+- 数据库功能测试验证
+
+### 🚧 进行中阶段
+
+#### Phase 3: PDF解析与文本提取 (待开始)
+- PDF文件解析和文本提取
+- 文献信息自动识别
+- 文本预处理和清洗
+
+### 📋 待完成阶段
+
+- Phase 4: AI模型集成与训练
+- Phase 5: 信息提取核心模块
+- Phase 6: Web用户界面开发
+- Phase 7: 桌面应用开发
+- Phase 8: 测试与优化
+- Phase 9: 部署与文档
 
 ---
 
