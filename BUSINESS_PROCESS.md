@@ -49,35 +49,77 @@ chinese_keywords = [
 - 搜索结果去重和排序
 - 相关性评分和筛选
 
-### 2. PDF获取阶段 📥
+### 2. 出版社网站PDF链接获取阶段 🔗
 
-#### 2.1 下载策略
-- **开放获取优先**: 优先下载开放获取的文献
+#### 2.1 出版社识别
+- **URL分析**: 根据文章URL识别出版社
+- **规则匹配**: 使用预定义规则匹配出版社
+- **策略选择**: 根据出版社选择PDF获取策略
+
+#### 2.2 主流出版社处理
+```python
+# 主要出版社及其PDF获取策略
+publishers = {
+    "elsevier": {
+        "domain": "sciencedirect.com",
+        "strategy": "selenium_extraction",
+        "access_type": "subscription"
+    },
+    "wiley": {
+        "domain": "onlinelibrary.wiley.com", 
+        "strategy": "api_extraction",
+        "access_type": "subscription"
+    },
+    "springer": {
+        "domain": "link.springer.com",
+        "strategy": "direct_link",
+        "access_type": "mixed"
+    },
+    "acs": {
+        "domain": "pubs.acs.org",
+        "strategy": "selenium_extraction",
+        "access_type": "subscription"
+    }
+}
+```
+
+#### 2.3 开放获取文献处理
+```python
+# 开放获取源
+open_access_sources = {
+    "pmc": {
+        "domain": "ncbi.nlm.nih.gov",
+        "strategy": "direct_download",
+        "access_type": "open"
+    },
+    "arxiv": {
+        "domain": "arxiv.org",
+        "strategy": "direct_download", 
+        "access_type": "open"
+    },
+    "plos": {
+        "domain": "journals.plos.org",
+        "strategy": "direct_download",
+        "access_type": "open"
+    }
+}
+```
+
+### 3. PDF批量下载阶段 📥
+
+#### 3.1 下载策略
+- **出版社适配**: 根据出版社使用不同的下载策略
 - **批量下载**: 支持批量下载多个PDF
 - **断点续传**: 支持下载中断后继续
 - **失败重试**: 自动重试失败的下载
 
-#### 2.2 下载源识别
-```python
-# 开放获取源
-open_access_sources = [
-    "PubMed Central (PMC)",
-    "arXiv",
-    "DOAJ",
-    "Hindawi",
-    "PLOS ONE"
-]
+#### 3.2 反爬虫处理
+- **请求头伪装**: 模拟真实浏览器请求
+- **频率控制**: 控制请求频率避免被封
+- **代理轮换**: 使用代理IP轮换
+- **会话管理**: 维护登录状态
 
-# 付费文献处理
-paid_sources = [
-    "ScienceDirect",
-    "Wiley Online Library", 
-    "SpringerLink",
-    "ACS Publications"
-]
-```
-
-#### 2.3 文件管理
+#### 3.3 文件管理
 - PDF文件本地存储
 - 文件命名规范（DOI_标题.pdf）
 - 文件完整性验证
