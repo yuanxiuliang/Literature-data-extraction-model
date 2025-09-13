@@ -441,6 +441,306 @@ logging.basicConfig(
 )
 ```
 
+## 完整期刊列表
+
+### 主流学术出版社
+
+#### 1. 大型国际出版社
+- **Elsevier** (ScienceDirect)
+  - Journal of Crystal Growth
+  - Journal of Alloys and Compounds
+  - Materials Research Bulletin
+  - Journal of Solid State Chemistry
+  - Materials Chemistry and Physics
+- **Wiley** (Wiley Online Library)
+  - Crystal Research and Technology
+  - Advanced Materials
+  - Advanced Functional Materials
+  - Chemistry of Materials
+- **Springer** (SpringerLink)
+  - Journal of Materials Science
+  - Materials Science and Engineering
+  - Journal of Materials Research
+  - Materials Characterization
+- **Taylor & Francis**
+  - Philosophical Magazine
+  - Journal of Materials Science: Materials in Electronics
+- **SAGE Publications**
+  - Journal of Materials Science
+- **Oxford University Press**
+  - Journal of Physics: Condensed Matter
+- **Cambridge University Press**
+  - Journal of Materials Research
+
+#### 2. 专业化学/材料学期刊出版社
+- **American Chemical Society (ACS)**
+  - Crystal Growth & Design
+  - Chemistry of Materials
+  - Journal of the American Chemical Society
+  - Inorganic Chemistry
+  - Journal of Physical Chemistry
+- **Royal Society of Chemistry (RSC)**
+  - CrystEngComm
+  - Journal of Materials Chemistry A/B/C
+  - Materials Horizons
+  - Chemical Communications
+- **Materials Research Society (MRS)**
+  - MRS Bulletin
+  - Journal of Materials Research
+- **International Union of Crystallography (IUCr)**
+  - Acta Crystallographica Section A/B/C
+  - Journal of Applied Crystallography
+- **American Physical Society (APS)**
+  - Physical Review B
+  - Physical Review Materials
+  - Applied Physics Letters
+  - Journal of Applied Physics
+
+#### 3. 开放获取出版社
+- **PLOS**
+  - PLOS ONE
+  - PLOS Materials
+- **Hindawi**
+  - Journal of Materials
+  - Advances in Materials Science and Engineering
+- **MDPI**
+  - Materials
+  - Crystals
+  - Nanomaterials
+- **Frontiers**
+  - Frontiers in Materials
+- **BioMed Central**
+  - Materials Science and Engineering
+
+#### 4. 预印本和开放获取平台
+- **arXiv** (物理、材料科学)
+- **bioRxiv** (生物相关)
+- **chemRxiv** (化学相关)
+- **PubMed Central (PMC)**
+- **DOAJ** (Directory of Open Access Journals)
+
+#### 5. 专业晶体学/材料学期刊
+- **Journal of Crystal Growth** (Elsevier)
+- **Crystal Growth & Design** (ACS)
+- **CrystEngComm** (RSC)
+- **Acta Crystallographica** (IUCr)
+- **Journal of Materials Chemistry** (RSC)
+- **Materials Today** (Elsevier)
+
+#### 6. 亚洲地区出版社
+- **Nature Publishing Group**
+  - Nature Materials
+  - Nature Communications
+  - Scientific Reports
+- **IOP Publishing** (英国物理学会)
+  - Journal of Physics: Condensed Matter
+  - Materials Research Express
+- **Chinese Academy of Sciences**
+  - Science China Materials
+  - Chinese Physics B
+- **Science China Press**
+  - Science China Chemistry
+- **Japan Society of Applied Physics**
+  - Japanese Journal of Applied Physics
+
+#### 7. 其他重要出版社
+- **American Institute of Physics (AIP)**
+  - Applied Physics Letters
+  - Journal of Applied Physics
+- **Institute of Physics (IOP)**
+  - Journal of Physics: Condensed Matter
+- **Wiley-VCH**
+  - Advanced Materials
+- **Thieme**
+  - Chemistry of Materials
+- **Karger**
+  - Materials Science
+
+## 实施策略
+
+### Phase 3.1: 试点验证阶段
+
+#### 选择APS作为起点
+**原因：**
+- 技术实现相对简单
+- 反爬虫机制相对较弱
+- 不需要复杂的认证流程
+- 网站结构相对标准化
+- 在单晶生长领域有重要期刊
+
+**目标期刊：**
+- Physical Review B
+- Physical Review Materials
+- Applied Physics Letters
+- Journal of Applied Physics
+
+**验证目标：**
+1. PDF获取成功率 > 80%
+2. 反爬虫处理效果验证
+3. 文件质量验证
+4. 完整流程验证
+
+### Phase 3.2: 扩展阶段
+
+#### 按优先级逐步添加出版社
+
+**优先级1: 开放获取优先**
+- arXiv
+- PMC
+- PLOS系列
+- 部分MDPI期刊
+
+**优先级2: 混合模式**
+- Springer（开放获取部分）
+- Nature（开放获取部分）
+- 部分Elsevier开放获取期刊
+
+**优先级3: 需要认证的出版社**
+- ACS
+- RSC
+- 部分Elsevier期刊
+- 部分Wiley期刊
+
+### Phase 3.3: 完整覆盖阶段
+
+#### 实现所有主流出版社支持
+- 覆盖90%以上的单晶生长相关期刊
+- 建立出版社适配框架
+- 实现自动化PDF获取
+
+## 技术实现框架
+
+### 1. 出版社识别器
+
+```python
+class PublisherIdentifier:
+    """出版社识别器"""
+    
+    PUBLISHER_DOMAINS = {
+        "elsevier": ["sciencedirect.com"],
+        "wiley": ["onlinelibrary.wiley.com"],
+        "springer": ["link.springer.com"],
+        "acs": ["pubs.acs.org"],
+        "rsc": ["pubs.rsc.org"],
+        "aps": ["journals.aps.org", "aip.scitation.org"],
+        "nature": ["nature.com"],
+        "plos": ["journals.plos.org"],
+        "arxiv": ["arxiv.org"],
+        "pmc": ["ncbi.nlm.nih.gov"],
+        "mdpi": ["mdpi.com"],
+        "hindawi": ["hindawi.com"],
+        "frontiers": ["frontiersin.org"],
+        "iucr": ["iucr.org"],
+        "mrs": ["mrs.org"],
+        "iop": ["iopscience.iop.org"],
+        "taylor": ["tandfonline.com"],
+        "sage": ["sagepub.com"],
+        "oxford": ["academic.oup.com"],
+        "cambridge": ["cambridge.org"],
+        "aip": ["aip.scitation.org"],
+        "thieme": ["thieme-connect.com"],
+        "karger": ["karger.com"]
+    }
+    
+    def identify_publisher(self, url: str) -> str:
+        """根据URL识别出版社"""
+        for publisher, domains in self.PUBLISHER_DOMAINS.items():
+            if any(domain in url for domain in domains):
+                return publisher
+        return "unknown"
+```
+
+### 2. PDF获取策略配置
+
+```python
+PDF_EXTRACTION_STRATEGIES = {
+    "aps": {
+        "method": "selenium_extraction",
+        "difficulty": "easy",
+        "access_type": "mixed",
+        "priority": 1
+    },
+    "arxiv": {
+        "method": "direct_download",
+        "difficulty": "easy",
+        "access_type": "open",
+        "priority": 1
+    },
+    "pmc": {
+        "method": "direct_download",
+        "difficulty": "easy",
+        "access_type": "open",
+        "priority": 1
+    },
+    "plos": {
+        "method": "direct_download",
+        "difficulty": "easy",
+        "access_type": "open",
+        "priority": 1
+    },
+    "springer": {
+        "method": "mixed_extraction",
+        "difficulty": "medium",
+        "access_type": "mixed",
+        "priority": 2
+    },
+    "nature": {
+        "method": "mixed_extraction",
+        "difficulty": "medium",
+        "access_type": "mixed",
+        "priority": 2
+    },
+    "elsevier": {
+        "method": "selenium_extraction",
+        "difficulty": "hard",
+        "access_type": "subscription",
+        "priority": 3
+    },
+    "wiley": {
+        "method": "selenium_extraction",
+        "difficulty": "hard",
+        "access_type": "subscription",
+        "priority": 3
+    },
+    "acs": {
+        "method": "selenium_extraction",
+        "difficulty": "hard",
+        "access_type": "subscription",
+        "priority": 3
+    },
+    "rsc": {
+        "method": "selenium_extraction",
+        "difficulty": "hard",
+        "access_type": "subscription",
+        "priority": 3
+    }
+}
+```
+
+### 3. 实施时间表
+
+#### 第1周：APS试点
+- 分析APS网站结构
+- 实现APS PDF获取器
+- 测试下载成功率
+
+#### 第2-3周：开放获取扩展
+- 实现arXiv、PMC、PLOS支持
+- 验证开放获取文献处理
+
+#### 第4-6周：混合模式扩展
+- 实现Springer、Nature支持
+- 处理部分开放获取文献
+
+#### 第7-10周：订阅期刊扩展
+- 实现ACS、RSC、Elsevier、Wiley支持
+- 处理认证和反爬虫问题
+
+#### 第11-12周：优化和测试
+- 性能优化
+- 错误处理完善
+- 全面测试验证
+
 ---
 
 *最后更新：2024年9月*
