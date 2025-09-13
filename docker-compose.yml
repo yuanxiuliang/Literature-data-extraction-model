@@ -1,0 +1,45 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: crystal_growth_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: crystal_growth
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - crystal_growth_network
+
+  app:
+    build: .
+    container_name: crystal_growth_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mysql+pymysql://app_user:app_password@mysql:3306/crystal_growth
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    depends_on:
+      - mysql
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - crystal_growth_network
+
+volumes:
+  mysql_data:
+
+networks:
+  crystal_growth_network:
+    driver: bridge

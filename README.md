@@ -237,19 +237,95 @@ cvt_method_details (1) ←→ (1) cvt_crystal_morphology
 
 ## 技术栈
 
-- **数据库**：SQLite（本地数据库）
-- **后端**：Python + FastAPI
-- **前端**：React + Electron（桌面应用）
-- **AI模型**：Hugging Face Transformers（本地推理）
-- **爬虫**：Selenium + BeautifulSoup（本地爬取）
+### 后端技术
+- **Python 3.9+**：主要开发语言
+- **FastAPI**：Web框架
+- **SQLAlchemy**：ORM框架
+- **Alembic**：数据库迁移工具
+- **MySQL 8.0**：关系型数据库
+
+### 前端技术
+- **React**：用户界面框架
+- **Ant Design**：UI组件库
+- **Electron**：桌面应用框架
+- **D3.js/Chart.js**：数据可视化
+
+### AI和NLP
+- **Hugging Face Transformers**：预训练模型
+- **spaCy**：自然语言处理
+- **SciBERT/ChemBERTa**：科学文献专用模型
+
+### 部署和运维
+- **Docker**：容器化部署
+- **Docker Compose**：本地开发环境
+- **云服务**：生产环境部署（阿里云/腾讯云/AWS）
+- **MySQL云数据库**：云端数据存储
+
+### 开发工具
+- **Selenium**：网页自动化
+- **BeautifulSoup4**：HTML解析
+- **PyMuPDF**：PDF处理
+- **pytest**：单元测试
 
 ## 使用说明
 
-1. 通过DOI标识文献
-2. 自动提取晶体材料信息（化学式、晶系、空间群、晶格参数）
-3. 识别生长方法类型并提取相应参数
-4. 存储到本地SQLite数据库
-5. 支持数据查询和导出
+### 本地开发环境
+
+1. **环境准备**
+   ```bash
+   # 克隆项目
+   git clone https://github.com/yuanxiuliang/Literature-data-extraction-model.git
+   
+   # 进入项目目录
+   cd Literature-data-extraction-model
+   
+   # 创建虚拟环境
+   python3 -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   # 或 venv\Scripts\activate  # Windows
+   
+   # 安装依赖
+   pip install -r requirements.txt
+   ```
+
+2. **启动数据库**
+   ```bash
+   # 启动MySQL容器
+   docker-compose up -d
+   
+   # 运行数据库迁移
+   alembic upgrade head
+   ```
+
+3. **启动应用**
+   ```bash
+   # 启动API服务
+   python app/main.py
+   
+   # 访问API文档
+   # http://localhost:8000/docs
+   ```
+
+### 生产环境部署
+
+1. **云端部署**
+   - 配置云数据库MySQL
+   - 部署应用服务器
+   - 配置域名和SSL证书
+
+2. **数据管理**
+   - 通过DOI标识文献
+   - 自动提取晶体材料信息（化学式、晶系、空间群、晶格参数）
+   - 识别生长方法类型并提取相应参数
+   - 存储到MySQL数据库
+   - 支持数据查询和导出
+
+### 功能特点
+
+- **本地化开发**：使用Docker + MySQL本地开发环境
+- **云端部署**：支持部署到云服务供他人使用
+- **数据一致性**：开发和生产环境使用相同的数据库技术
+- **易于扩展**：模块化设计，便于添加新功能
 
 ---
 
