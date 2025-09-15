@@ -1,0 +1,122 @@
+Semantic Scholar API 搜索到的论文信息
+============================================================
+
+搜索时间: 2024年
+搜索查询: site:journals.aps.org/prb single crystal growth, physical review b single crystal, PRB crystal growth flux method
+总论文数: 10
+
+1. Single crystal growth, chemical defects, magnetic and transport properties of antiferromagnetic topological insulators (Ge$_{1-\delta-x}$Mn$_x$)$_2$Bi$_2$Te$_5$ ($x\leq 0.47$, $0.11 \leq \delta \leq 0.20$)
+   作者: Tiema Qian, Chaowei Hu, J. Green, Erxi Feng, Huibo Cao
+   年份: 2024
+   期刊: 
+   DOI: Unknown
+   摘要: Magnetic topological insulators provide a platform for emergent phenomena arising from the interplay between magnetism and band topology. Here we report the single crystal growth, crystal structure, m...
+
+------------------------------------------------------------
+
+2. Study of multilevel feature weighted fusion-based image classification method for silicon single crystal growth process
+   作者: Ruidong Xie, Zheqi Zhang, Pei Zhu, Wenle Ma, Yingmin Yi
+   年份: 2024
+   期刊: International Conference on Image Processing and Artificial Intelligence
+   DOI: 10.1117/12.3035195
+   APS链接: https://journals.aps.org/prb/abstract/10.1117/12.3035195
+   Sci-Hub链接: https://sci-hub.in/10.1117/12.3035195
+   Google Scholar: https://scholar.google.com/scholar?q=10.1117/12.3035195
+   摘要: A multi-level feature weighted fusion based image classification method for silicon single crystal growth process has been proposed to address the issue of the long silicon single crystal pulling time...
+
+------------------------------------------------------------
+
+3. Modeling and Simulation Design of Single Crystal Silicon Growth by Czochralski Method
+   作者: Ruidong Xie, Wenle Ma, Zheqi Zhang, Pei Zhu, Yingmin Yi
+   年份: 2024
+   期刊: 2024 5th International Conference on Mechatronics Technology and Intelligent Manufacturing (ICMTIM)
+   DOI: 10.1109/ICMTIM62047.2024.10629296
+   APS链接: https://journals.aps.org/prb/abstract/10.1109/ICMTIM62047.2024.10629296
+   Sci-Hub链接: https://sci-hub.in/10.1109/ICMTIM62047.2024.10629296
+   Google Scholar: https://scholar.google.com/scholar?q=10.1109/ICMTIM62047.2024.10629296
+   摘要: Due to difficulties in observing crystal state and the high cost of crystal preparation, the teaching of the Czochralski single crystal silicon production is complex. To solve the above problem, a dig...
+
+------------------------------------------------------------
+
+4. Early stage of the single-crystal growth and tipping point of the cationic site preference in Gd-doped Zintl phase thermoelectric materials
+   作者: Hayeon Sa, Junsu Lee, Yeon-Woo Hong, Mi-Kyung Han, Hongil Jo
+   年份: 2021
+   期刊: CrysteEngComm
+   DOI: 10.1039/d1ce00877c
+   APS链接: https://journals.aps.org/prb/abstract/10.1039/d1ce00877c
+   Sci-Hub链接: https://sci-hub.in/10.1039/d1ce00877c
+   Google Scholar: https://scholar.google.com/scholar?q=10.1039/d1ce00877c
+   摘要: Three novel Zintl phases in the Ca11−xGdxSb10−y system were synthesized, and the early stage of the single-crystal growth process and the “tipping point” of the cationic site preference for the size-f...
+
+------------------------------------------------------------
+
+5. Oriented Crystal Polarization Tuning Bulk Charge and Single‐Site Chemical State for Exceptional Hydrogen Photo‐Production
+   作者: Zijian Zhu, Jingcong Hu, Cheng-Pei Hu, Yue Lu, Shengqi Chu
+   年份: 2024
+   期刊: Advances in Materials
+   DOI: 10.1002/adma.202411339
+   APS链接: https://journals.aps.org/prb/abstract/10.1002/adma.202411339
+   Sci-Hub链接: https://sci-hub.in/10.1002/adma.202411339
+   Google Scholar: https://scholar.google.com/scholar?q=10.1002/adma.202411339
+   摘要: Rapid bulk charge recombination and mediocre surface catalytic sites harshly restrict the photocatalytic activities. Herein, the aforementioned concerns are well addressed by coupling macroscopic spon...
+
+------------------------------------------------------------
+
+6. Electronic structure and physical properties of EuAuAs single crystal
+   作者: S. Malick, J. Singh, A. Laha, V. Kanchana, Z. Hossain
+   年份: 2022
+   期刊: Physical review B
+   DOI: 10.1103/PhysRevB.105.045103
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.045103
+   Sci-Hub链接: https://sci-hub.in/10.1103/PhysRevB.105.045103
+   Google Scholar: https://scholar.google.com/scholar?q=10.1103/PhysRevB.105.045103
+   摘要: High-quality single crystals of EuAuAs were studied by means of powder x-ray diffraction, magnetization, magnetic susceptibility, heat capacity, electrical resistivity and magnetoresistance measuremen...
+
+------------------------------------------------------------
+
+7. Anomalous Hall effect in an antiferromagnetic CeGaSi single crystal
+   作者: Jing Gong, Huan Wang, Kun Han, Xiangtao Zeng, Xiao-Ping Ma
+   年份: 2024
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.109.024434
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/physrevb.109.024434
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.109.024434
+   Google Scholar: https://scholar.google.com/scholar?q=10.1103/physrevb.109.024434
+
+------------------------------------------------------------
+
+8. Anisotropic light-matter interactions in the single-crystal topological insulator bismuth selenide
+   作者: D. Rawat, A. Singh, N. Singh, A. Soni
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/PhysRevB.107.155203
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.155203
+   Sci-Hub链接: https://sci-hub.in/10.1103/PhysRevB.107.155203
+   Google Scholar: https://scholar.google.com/scholar?q=10.1103/PhysRevB.107.155203
+   摘要: Anisotropy of light-matter interactions in materials give remarkable information about the phonons and their interactions with electrons. We report the angle-resolved polarized Raman spectroscopy of s...
+
+------------------------------------------------------------
+
+9. Phase transformations and plasticity in single-crystal iron from shock compression to spall fracture
+   作者: N. Amadou, T. de Rességuier
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.108.174109
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/physrevb.108.174109
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.108.174109
+   Google Scholar: https://scholar.google.com/scholar?q=10.1103/physrevb.108.174109
+
+------------------------------------------------------------
+
+10. Universal kinetics of the stochastic formation of polarization domain structures in a uniaxial single-crystal ferroelectric
+   作者: O. Mazur, Leonid I. Stefanovich, Y. Genenko
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.109.104117
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/physrevb.109.104117
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.109.104117
+   Google Scholar: https://scholar.google.com/scholar?q=10.1103/physrevb.109.104117
+   摘要: Initial conditions after quenching from a high-temperature paraelectric phase to a low-temperature ferroelectric phase have a substantial impact on the temporal development and formation of stable pol...
+
+------------------------------------------------------------
+

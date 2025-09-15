@@ -1,0 +1,73 @@
+Semantic Scholar API 搜索到的15篇论文信息
+==================================================
+
+搜索时间: 2024年
+搜索查询: 
+1. site:journals.aps.org/prb single crystal growth
+2. physical review b single crystal  
+3. PRB crystal growth flux method
+
+论文列表:
+==================================================
+
+1. Electronic structure and physical properties of EuAuAs single crystal
+   作者: S. Malick, J. Singh, A. Laha
+   年份: 2022
+   期刊: Physical review B
+   DOI: 10.1103/PhysRevB.105.045103
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.105.045103
+   Sci-Hub链接: https://sci-hub.in/10.1103/PhysRevB.105.045103
+
+2. Anomalous Hall effect in an antiferromagnetic CeGaSi single crystal
+   作者: Jing Gong, Huan Wang, Kun Han
+   年份: 2024
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.109.024434
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.109.024434
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.109.024434
+
+3. Anisotropic light-matter interactions in the single-crystal topological insulator
+   作者: D. Rawat, A. Singh, N. Singh
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/PhysRevB.107.155203
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.155203
+   Sci-Hub链接: https://sci-hub.in/10.1103/PhysRevB.107.155203
+
+4. Phase transformations and plasticity in single-crystal iron from shock compression
+   作者: N. Amadou, T. de Rességuier
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.108.174109
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.174109
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.108.174109
+
+5. Universal kinetics of the stochastic formation of polarization domain structures
+   作者: O. Mazur, Leonid I. Stefanovich, Y. Genenko
+   年份: 2023
+   期刊: Physical review B
+   DOI: 10.1103/physrevb.109.104117
+   APS链接: https://journals.aps.org/prb/abstract/10.1103/PhysRevB.109.104117
+   Sci-Hub链接: https://sci-hub.in/10.1103/physrevb.109.104117
+
+6. [其他10篇论文的详细信息...]
+
+注意: 以上是前5篇真正的PRB论文，其余10篇论文不是PRB期刊的论文。
+
+手动测试建议:
+==================================================
+
+1. 先测试APS官方链接是否能直接访问PDF:
+   - 如果您的机构有订阅，应该能直接下载
+   - 如果没有订阅，会显示需要登录或购买
+
+2. 再测试Sci-Hub链接:
+   - 访问Sci-Hub链接
+   - 查看是否能找到PDF下载按钮
+   - 检查页面是否有"未找到文章"的提示
+
+3. 测试DOI直接搜索:
+   - 在Google Scholar中搜索DOI
+   - 查看是否有其他开放获取的PDF链接
+
+请告诉我手动测试的结果，这样我们可以确定问题出在哪里！

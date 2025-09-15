@@ -1,0 +1,150 @@
+{
+  "total_papers": 10,
+  "success_count": 0,
+  "failed_count": 10,
+  "success_rate": 0.0,
+  "papers": [
+    {
+      "title": "Crystal growth, transport properties, and crystal structure of the single-crystal",
+      "doi": "10.1103/PhysRevB.64.144524",
+      "year": "2001",
+      "authors": "T Adachi, T Noji, Y Koike",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Quantum phase transitions in single-crystal and : Crystal growth, magnetization, ac susceptibility, and specific heat",
+      "doi": "10.1103/PhysRevB.82.064404",
+      "year": "2010",
+      "authors": "A Bauer, A Neubauer, C Franz, W Münzer, M Garst…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Single-crystal growth and characterization of antiferromagnetically ordered",
+      "doi": "10.1103/PhysRevB.109.214401",
+      "year": "2024",
+      "authors": "B Kuthanazhi, SXM Riberolles, DH Ryan, PJ Ryan…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and investigation of and",
+      "doi": "10.1103/PhysRevB.70.024506",
+      "year": "2004",
+      "authors": "DP Chen, HC Chen, A Maljuk, A Kulakov, H Zhang…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Comprehensive scenario for single-crystal growth and doping dependence of resistivity and anisotropic upper critical fields in (BaK)FeAs ()",
+      "doi": "10.1103/PhysRevB.89.134504",
+      "year": "2014",
+      "authors": "Y Liu, MA Tanatar, WE Straszheim, B Jensen…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Crystal growth, microstructure, and physical properties of",
+      "doi": "10.1103/PhysRevB.99.054435",
+      "year": "2019",
+      "authors": "Y Liu, T Ma, L Zhou, WE Straszheim, F Islam…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and physical properties of the layered arsenide",
+      "doi": "10.1103/PhysRevB.78.104512",
+      "year": "2008",
+      "authors": "Y Singh, Y Lee, S Nandi, A Kreyssig, A Ellern…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Structural trends from a consistent set of single-crystal data of (, Ce, Pr, Nd, Sm, Gd, and Tb)",
+      "doi": "10.1103/PhysRevB.82.134514",
+      "year": "2010",
+      "authors": "F Nitsche, A Jesche, E Hieckmann, T Doert…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Crystal growth and spectroscopic characterization of -doped single crystals",
+      "doi": "10.1103/PhysRevB.66.144304",
+      "year": "2002",
+      "authors": "MC Pujol, F Güell, X Mateos, J Gavalda, R Solé…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and physical properties of URhIn",
+      "doi": "10.1103/PhysRevB.88.045120",
+      "year": "2013",
+      "authors": "Y Matsumoto, Y Haga, N Tateiwa, H Sakai…",
+      "journal": "Physical Review B …,"
+    }
+  ],
+  "failed_papers": [
+    {
+      "title": "Crystal growth, transport properties, and crystal structure of the single-crystal",
+      "doi": "10.1103/PhysRevB.64.144524",
+      "year": "2001",
+      "authors": "T Adachi, T Noji, Y Koike",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Quantum phase transitions in single-crystal and : Crystal growth, magnetization, ac susceptibility, and specific heat",
+      "doi": "10.1103/PhysRevB.82.064404",
+      "year": "2010",
+      "authors": "A Bauer, A Neubauer, C Franz, W Münzer, M Garst…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Single-crystal growth and characterization of antiferromagnetically ordered",
+      "doi": "10.1103/PhysRevB.109.214401",
+      "year": "2024",
+      "authors": "B Kuthanazhi, SXM Riberolles, DH Ryan, PJ Ryan…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and investigation of and",
+      "doi": "10.1103/PhysRevB.70.024506",
+      "year": "2004",
+      "authors": "DP Chen, HC Chen, A Maljuk, A Kulakov, H Zhang…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Comprehensive scenario for single-crystal growth and doping dependence of resistivity and anisotropic upper critical fields in (BaK)FeAs ()",
+      "doi": "10.1103/PhysRevB.89.134504",
+      "year": "2014",
+      "authors": "Y Liu, MA Tanatar, WE Straszheim, B Jensen…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Crystal growth, microstructure, and physical properties of",
+      "doi": "10.1103/PhysRevB.99.054435",
+      "year": "2019",
+      "authors": "Y Liu, T Ma, L Zhou, WE Straszheim, F Islam…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and physical properties of the layered arsenide",
+      "doi": "10.1103/PhysRevB.78.104512",
+      "year": "2008",
+      "authors": "Y Singh, Y Lee, S Nandi, A Kreyssig, A Ellern…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Structural trends from a consistent set of single-crystal data of (, Ce, Pr, Nd, Sm, Gd, and Tb)",
+      "doi": "10.1103/PhysRevB.82.134514",
+      "year": "2010",
+      "authors": "F Nitsche, A Jesche, E Hieckmann, T Doert…",
+      "journal": "Physical Review B …,"
+    },
+    {
+      "title": "Crystal growth and spectroscopic characterization of -doped single crystals",
+      "doi": "10.1103/PhysRevB.66.144304",
+      "year": "2002",
+      "authors": "MC Pujol, F Güell, X Mateos, J Gavalda, R Solé…",
+      "journal": "Physical Review B,"
+    },
+    {
+      "title": "Single-crystal growth and physical properties of URhIn",
+      "doi": "10.1103/PhysRevB.88.045120",
+      "year": "2013",
+      "authors": "Y Matsumoto, Y Haga, N Tateiwa, H Sakai…",
+      "journal": "Physical Review B …,"
+    }
+  ]
+}

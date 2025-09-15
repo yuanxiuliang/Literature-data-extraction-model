@@ -18,6 +18,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from .cloudflare_bypass import CloudflareBypass
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -36,14 +37,20 @@ class PDFInfo:
 class APSPDFExtractor:
     """APS PDF提取器"""
     
-    def __init__(self, use_selenium: bool = True):
+    def __init__(self, use_selenium: bool = True, use_cloudflare_bypass: bool = True):
         self.use_selenium = use_selenium
+        self.use_cloudflare_bypass = use_cloudflare_bypass
         self.session = requests.Session()
         self.driver = None
+        self.cloudflare_bypass = None
         self._setup_session()
         
         if use_selenium:
-            self._setup_selenium()
+            if use_cloudflare_bypass:
+                self.cloudflare_bypass = CloudflareBypass(headless=False)
+                self.driver = self.cloudflare_bypass.driver
+            else:
+                self._setup_selenium()
     
     def _setup_session(self):
         """设置请求会话"""
@@ -121,13 +128,121 @@ class APSPDFExtractor:
         """提取APS Journals PDF信息"""
         try:
             if self.use_selenium and self.driver:
-                return self._extract_with_selenium(article_url, "aps_journals")
+                if self.use_cloudflare_bypass and self.cloudflare_bypass:
+                    return self._extract_with_cloudflare_bypass(article_url, "aps_journals")
+                else:
+                    return self._extract_with_selenium(article_url, "aps_journals")
             else:
                 return self._extract_with_requests(article_url, "aps_journals")
                 
         except Exception as e:
             logger.error(f"APS Journals PDF提取失败: {e}")
             return None
+    
+    def _extract_with_cloudflare_bypass(self, article_url: str, publisher: str) -> Optional[PDFInfo]:
+        """使用Cloudflare绕过提取PDF信息"""
+        try:
+            logger.info(f"使用Cloudflare绕过访问: {article_url}")
+            
+            # 绕过Cloudflare
+            success = self.cloudflare_bypass.bypass_cloudflare(article_url)
+            if not success:
+                logger.error("Cloudflare绕过失败")
+                return PDFInfo(
+                    pdf_url="",
+                    file_name="",
+                    error_message="Cloudflare绕过失败"
+                )
+            
+            # 等待页面完全加载
+            time.sleep(3)
+            
+            # 获取页面内容
+            page_source = self.cloudflare_bypass.get_page_content()
+            if not page_source:
+                logger.error("无法获取页面内容")
+                return PDFInfo(
+                    pdf_url="",
+                    file_name="",
+                    error_message="无法获取页面内容"
+                )
+            
+            # 解析PDF链接
+            soup = BeautifulSoup(page_source, 'html.parser')
+            
+            if publisher == "aps_journals":
+                return self._parse_aps_journals_pdf_from_soup(soup, article_url)
+            else:
+                logger.warning(f"不支持的出版社类型: {publisher}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Cloudflare绕过提取失败: {e}")
+            return PDFInfo(
+                pdf_url="",
+                file_name="",
+                error_message=str(e)
+            )
+    
+    def _parse_aps_journals_pdf_from_soup(self, soup: BeautifulSoup, article_url: str) -> Optional[PDFInfo]:
+        """从BeautifulSoup解析APS Journals PDF信息"""
+        try:
+            # 查找PDF下载链接
+            pdf_selectors = [
+                'a[href*=".pdf"]',
+                'a[href*="pdf"]',
+                'a[title*="PDF"]',
+                'a[title*="pdf"]',
+                '.pdf-download',
+                '.download-pdf',
+                '[data-pdf]'
+            ]
+            
+            pdf_url = None
+            for selector in pdf_selectors:
+                try:
+                    pdf_link = soup.select_one(selector)
+                    if pdf_link and pdf_link.get('href'):
+                        pdf_url = urljoin(article_url, pdf_link['href'])
+                        break
+                except:
+                    continue
+            
+            if not pdf_url:
+                # 尝试从页面中查找PDF相关的文本链接
+                pdf_links = soup.find_all('a', href=True)
+                for link in pdf_links:
+                    href = link.get('href', '')
+                    if 'pdf' in href.lower() or 'download' in href.lower():
+                        pdf_url = urljoin(article_url, href)
+                        break
+            
+            if pdf_url:
+                # 生成文件名
+                file_name = self._generate_filename(article_url, pdf_url)
+                
+                logger.info(f"找到PDF链接: {pdf_url}")
+                return PDFInfo(
+                    pdf_url=pdf_url,
+                    file_name=file_name,
+                    access_type="unknown",
+                    requires_auth=False
+                )
+            else:
+                logger.warning("未找到PDF下载链接")
+                return PDFInfo(
+                    pdf_url="",
+                    file_name="",
+                    error_message="未找到PDF下载链接"
+                )
+                
+        except Exception as e:
+            logger.error(f"解析APS Journals PDF失败: {e}")
+            return PDFInfo(
+                pdf_url="",
+                file_name="",
+                error_message=str(e)
+            )
     
     def _extract_aip_scitation_pdf(self, article_url: str) -> Optional[PDFInfo]:
         """提取AIP Scitation PDF信息"""

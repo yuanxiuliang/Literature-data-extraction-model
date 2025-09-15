@@ -245,11 +245,17 @@ class WorkflowIntegrator:
     def get_workflow_stats(self) -> Dict:
         """获取工作流程统计信息"""
         if not self.workflow_log:
-            return {"total_runs": 0, "average_success_rate": 0.0}
+            return {
+                "total_runs": 0, 
+                "total_processed": 0,
+                "total_successful": 0,
+                "average_success_rate": 0.0,
+                "recent_runs": []
+            }
         
         total_runs = len(self.workflow_log)
-        total_processed = sum(log["total_processed"] for log in self.workflow_log)
-        total_successful = sum(log["successful_downloads"] for log in self.workflow_log)
+        total_processed = sum(log.get("total_processed", 0) for log in self.workflow_log)
+        total_successful = sum(log.get("successful_downloads", 0) for log in self.workflow_log)
         average_success_rate = (total_successful / total_processed * 100) if total_processed > 0 else 0.0
         
         return {
